@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Setup FAB to open EditorActivity
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 null,
                 null);
 
-        TextView displayView = (TextView) findViewById(R.id.text_view_books);
+        TextView displayView = findViewById(R.id.text_view_books);
 
 
         try {
