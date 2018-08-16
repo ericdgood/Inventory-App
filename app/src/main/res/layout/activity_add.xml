@@ -28,29 +28,15 @@
         android:hint="@string/price"
         android:layout_marginTop="10dp"/>
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/qty_add"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:padding="10dp"
         android:background="@color/bkg"
-        android:layout_marginTop="10dp">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:text="@string/qty"
-            android:textAllCaps="true"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:textStyle="bold"/>
-    
-    <Spinner
-        android:id="@+id/qty_add"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:spinnerMode="dropdown"/>
-
-    </LinearLayout>
+        android:hint="@string/quantity"
+        android:layout_marginTop="10dp"/>
 
     <EditText
         android:id="@+id/supplier_name_add"
