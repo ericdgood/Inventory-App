@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Book Store</string>
+    <string name="book_name">Book Name</string>
+    <string name="price">Price</string>
+    <string name="supplier_phone_number">Supplier Phone Number</string>
+    <string name="supplier_name">Supplier Name</string>
+    <string name="qty">qty</string>
+</resources>

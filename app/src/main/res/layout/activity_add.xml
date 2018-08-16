@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="@drawable/volunteer_app_bg"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/book_title_add"
+        android:inputType="textCapWords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/bkg"
+        android:hint="@string/book_name"/>
+
+    <EditText
+        android:id="@+id/price_add"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/bkg"
+        android:hint="@string/price"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/bkg"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:text="@string/qty"
+            android:textAllCaps="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp"
+            android:textStyle="bold"/>
+    
+    <Spinner
+        android:id="@+id/qty_add"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:spinnerMode="dropdown"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/supplier_name_add"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/bkg"
+        android:hint="@string/supplier_name"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/suppler_phone_add"
+        android:inputType="phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/bkg"
+        android:hint="@string/supplier_phone_number"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>
