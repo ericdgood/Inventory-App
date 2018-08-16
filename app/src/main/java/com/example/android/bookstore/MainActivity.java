@@ -118,10 +118,10 @@ public class MainActivity extends AppCompatActivity {
 
         ContentValues values = new ContentValues();
         values.put(BookContract.BookEntry.COLUMN_BOOK_NAME, "7 Habits");
-        values.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, 9);
+        values.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, 9.99);
         values.put(BookContract.BookEntry.COLUMN_BOOK_QTY, 3);
         values.put(BookContract.BookEntry.COLUMN_SUPPLIER_NAME, "Steve");
-        values.put(BookContract.BookEntry.COLUMN_SUPPLIER_PHONE, 407-999-9999);
+        values.put(BookContract.BookEntry.COLUMN_SUPPLIER_PHONE, "407-999-9999");
 
         long newRowId = db.insert(BookContract.BookEntry.TABLE_NAME, null, values);
     }

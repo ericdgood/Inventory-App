@@ -48,7 +48,6 @@ public class AddActivity extends AppCompatActivity{
         String supplierPhoneString = mSupplierPhone.getText().toString().trim();
         int price = Integer.parseInt(priceInt);
         int qty = Integer.parseInt(qtyInt);
-        int phone = Integer.parseInt(supplierPhoneString);
         // Create database helper
         BookDbHelper mDbHelper = new BookDbHelper(this);
         // Gets the database in write mode
@@ -59,7 +58,7 @@ public class AddActivity extends AppCompatActivity{
         values.put(BookContract.BookEntry.COLUMN_BOOK_PRICE, price);
         values.put(BookContract.BookEntry.COLUMN_BOOK_QTY, qty);
         values.put(BookContract.BookEntry.COLUMN_SUPPLIER_NAME, supplierNameString);
-        values.put(BookContract.BookEntry.COLUMN_SUPPLIER_PHONE, phone);
+        values.put(BookContract.BookEntry.COLUMN_SUPPLIER_PHONE, supplierPhoneString);
 
         long newRowId = db.insert(BookContract.BookEntry.TABLE_NAME, null, values);
 
@@ -74,7 +73,6 @@ public class AddActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_editor.xml file.
         // This adds menu items to the app bar.
         getMenuInflater().inflate(R.menu.menu_add, menu);
         return true;
