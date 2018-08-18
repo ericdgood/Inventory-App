@@ -6,7 +6,6 @@
     android:paddingTop="20dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    android:background="@drawable/volunteer_app_bg"
     android:orientation="vertical">
 
     <EditText
@@ -15,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/bkg"
         android:hint="@string/book_name"/>
 
     <EditText
@@ -24,7 +22,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/bkg"
         android:hint="@string/price"
         android:layout_marginTop="10dp"/>
 
@@ -34,7 +31,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/bkg"
         android:hint="@string/quantity"
         android:layout_marginTop="10dp"/>
 
@@ -44,7 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/bkg"
         android:hint="@string/supplier_name"
         android:layout_marginTop="10dp"/>
 
@@ -54,7 +49,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/bkg"
         android:hint="@string/supplier_phone_number"
         android:layout_marginTop="10dp"/>
 

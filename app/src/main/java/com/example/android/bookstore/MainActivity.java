@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 
         TextView displayView = findViewById(R.id.text_view_books);
 
-
         try {
 
             displayView.setText("The library table contains " + cursor.getCount() + " books.\n\n");

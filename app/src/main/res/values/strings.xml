@@ -10,4 +10,6 @@
     <string name="delete">Delete</string>
     <string name="delete_all_books">Delete All Books</string>
     <string name="insert_books">Insert Books</string>
+    <string name="error">Error with saving book</string>
+    <string name="saved">book saved with row id: </string>
 </resources>

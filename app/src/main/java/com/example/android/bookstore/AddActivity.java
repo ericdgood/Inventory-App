@@ -64,10 +64,10 @@ public class AddActivity extends AppCompatActivity{
 
         if (newRowId == -1) {
 
-            Toast.makeText(this, "Error with saving book", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.error, Toast.LENGTH_SHORT).show();
         } else {
 
-            Toast.makeText(this, "book saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, (int) (R.string.saved + newRowId), Toast.LENGTH_SHORT).show();
         }
     }
 
