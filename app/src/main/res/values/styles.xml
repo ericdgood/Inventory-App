@@ -14,4 +14,55 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:textColor">#fff</item>
     </style>
+    <!-- list_item style -->
+    <style name="ListItemLinearLayoutsection1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ListItemLinearLayoutsection2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ListItemText">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ActivityViewLinearLayoutsection2">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="ActivityViewLinearLayoutsection1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="ActivityViewButtonStyle">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:focusable">false</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+    <!-- activity_view style-->
+    <style name="ProductViewTitleTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="ProductViewdetailStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+    </style>
 </resources>

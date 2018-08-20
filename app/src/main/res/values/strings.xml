@@ -40,6 +40,15 @@
     <string name="not_support">Update is not supported for </string>
     <string name="delete_support">Deletion is not supported for </string>
     <string name="unknown">Unknown URI</string>
-
-
+    <string name="product_detail">Product detail</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_price">Product Price</string>
+    <string name="product_view">Produce View</string>
+    <string name="quantity_change_msg">Quantity was change</string>
+    <string name="quantity_finish_msg">Product was finish :( , buy another Product</string>
+    <string name="insert_failed">Error with saving product</string>
+    <string name="insert_successful">Product saved successfully</string>
+    <string name="update_failed">Error with updating product</string>
+    <string name="delete_product_successful">Product deleted</string>
+    <string name="delete_product_failed">Error with deleting Product</string>
 </resources>
