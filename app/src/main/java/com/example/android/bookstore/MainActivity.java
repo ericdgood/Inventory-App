@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.android.bookstore.data.BookContract.BookEntry;
 
@@ -59,6 +60,21 @@ public class MainActivity extends AppCompatActivity implements
             }
         });
         getLoaderManager().initLoader(BOOK_LOADER, null, this);
+    }
+
+    public void productSaleCount(int productID, int productQuantity) {
+        productQuantity = productQuantity - 1;
+        if (productQuantity >= 0) {
+            ContentValues values = new ContentValues();
+            values.put(BookEntry.COLUMN_BOOK_QTY, productQuantity);
+            Uri updateUri = ContentUris.withAppendedId(BookEntry.CONTENT_URI, productID);
+            int rowsAffected = getContentResolver().update(updateUri, values, null, null);
+            Toast.makeText(this, "Quantity was change", Toast.LENGTH_SHORT).show();
+
+            Log.d("Log msg", "rowsAffected " + rowsAffected + " - productID " + productID + " - quantity " + productQuantity + " , decreaseCount has been called.");
+        } else {
+            Toast.makeText(this, "Product was finish :( , buy another Product", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void insertBook() {
