@@ -12,4 +12,34 @@
     <string name="insert_books">Insert Books</string>
     <string name="error">Error with saving book</string>
     <string name="saved">book saved with row id: </string>
+    <string name="add_some_inventory">Add books to inventory</string>
+    <string name="delete_rows"> rows deleted from pet database</string>
+    <string name="editor_activity_title_new_book">Add a Book</string>
+    <string name="editor_activity_title_edit_book">Edit Book Info</string>
+    <string name="editor_insert_book_failed">Error saving Book</string>
+    <string name="editor_insert_book_successful">Book Saved</string>
+    <string name="editor_update_book_failed">Book update failed</string>
+    <string name="editor_update_book_successful">Book Updated Successful</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_dialog_msg">Delete this book?</string>
+    <string name="editor_delete_book_failed">Error deleting book</string>
+    <string name="editor_delete_book_successful">Book deleted</string>
+    <string name="not_supported">Insertion is not supported for </string>
+    <string name="no_query">Cannot query unknown URI </string>
+
+
+    <string name="no_name">Books name is required</string>
+    <string name="no_price">Books price is required</string>
+    <string name="no_qty">Books qty is required</string>
+    <string name="no_sName">Suppliers name is required</string>
+    <string name="no_sPhone">Suppliers phone is required</string>
+    <string name="fail_insert">Failed to insert row for </string>
+    <string name="not_support">Update is not supported for </string>
+    <string name="delete_support">Deletion is not supported for </string>
+    <string name="unknown">Unknown URI</string>
+
+
 </resources>
