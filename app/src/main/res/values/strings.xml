@@ -30,7 +30,7 @@
     <string name="not_supported">Insertion is not supported for </string>
     <string name="no_query">Cannot query unknown URI </string>
 
-
+    <string name="product_quantity">Quantity</string>
     <string name="no_name">Books name is required</string>
     <string name="no_price">Books price is required</string>
     <string name="no_qty">Books qty is required</string>

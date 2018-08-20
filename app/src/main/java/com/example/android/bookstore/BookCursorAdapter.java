@@ -1,7 +1,10 @@
 package com.example.android.bookstore;
 
+import android.content.ContentUris;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +15,7 @@ import android.widget.TextView;
 
 import com.example.android.bookstore.data.BookContract;
 
-public class BookCursorAdapter extends CursorAdapter{
+public class BookCursorAdapter extends CursorAdapter {
 
     public BookCursorAdapter(Context context, Cursor c) {
         super(context, c, 0 /* flags */);
@@ -46,6 +49,8 @@ public class BookCursorAdapter extends CursorAdapter{
         summaryTextView.setText(bookprice);
         summaryQtyView.setText(bookQty);
 
+        summaryQtyView.setText(context.getString(R.string.product_quantity) + " : " + productQuantity);
+
         productSaleButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,5 +58,17 @@ public class BookCursorAdapter extends CursorAdapter{
                 MainActivity Activity = (MainActivity) context;
                 Activity.productSaleCount(Integer.valueOf(productID), Integer.valueOf(productQuantity));
             }
-    });
-}}
+        });
+
+        Button productEditButton = view.findViewById(R.id.edit_button);
+        productEditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(view.getContext(), AddActivity.class);
+                Uri currentProdcuttUri = ContentUris.withAppendedId(BookContract.BookEntry.CONTENT_URI, Long.parseLong(productID));
+                intent.setData(currentProdcuttUri);
+                context.startActivity(intent);
+            }
+        });
+    }
+}
