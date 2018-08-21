@@ -86,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements
         values.put(BookEntry.COLUMN_SUPPLIER_NAME, "Steve");
         values.put(BookEntry.COLUMN_SUPPLIER_PHONE, "407-999-9999");
 
-        Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
 }
 
     private void deleteAllBooks() {

@@ -87,8 +87,6 @@ public class AddActivity extends AppCompatActivity implements
         String qtyString = mQtyEditText.getText().toString().trim();
         String supplierNameString = mSupplierName.getText().toString().trim();
         String supplierPhoneString = mSupplierPhone.getText().toString().trim();
-        int price = Integer.parseInt(priceString);
-        int qty = Integer.parseInt(qtyString);
 
         if (mCurrentBookUri == null) {
             if (TextUtils.isEmpty(nameString)) {
@@ -111,16 +109,15 @@ public class AddActivity extends AppCompatActivity implements
                 Toast.makeText(this, getString(R.string.supplier_phone_requires), Toast.LENGTH_SHORT).show();
                 return;
             }
-        }
+
 
         ContentValues values = new ContentValues();
         values.put(BookEntry.COLUMN_BOOK_NAME, nameString);
-        values.put(BookEntry.COLUMN_BOOK_PRICE, price);
-        values.put(BookEntry.COLUMN_BOOK_QTY, qty);
+        values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
+        values.put(BookEntry.COLUMN_BOOK_QTY, qtyString);
         values.put(BookEntry.COLUMN_SUPPLIER_NAME, supplierNameString);
         values.put(BookEntry.COLUMN_SUPPLIER_PHONE, supplierPhoneString);
 
-        if (mCurrentBookUri == null) {
             Uri newUri = getContentResolver().insert(BookEntry.CONTENT_URI, values);
 
             if (newUri == null) {
@@ -133,20 +130,47 @@ public class AddActivity extends AppCompatActivity implements
                         Toast.LENGTH_SHORT).show();
             }
         } else {
-            int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null, null);
 
-            // Show a toast message depending on whether or not the update was successful.
+            if (TextUtils.isEmpty(nameString)) {
+                Toast.makeText(this, getString(R.string.product_name_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(priceString)) {
+                Toast.makeText(this, getString(R.string.price_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(qtyString)) {
+                Toast.makeText(this, getString(R.string.quantity_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(supplierNameString)) {
+                Toast.makeText(this, getString(R.string.supplier_phone_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(supplierPhoneString)) {
+                Toast.makeText(this, getString(R.string.supplier_phone_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            ContentValues values = new ContentValues();
+
+            values.put(BookEntry.COLUMN_BOOK_NAME, nameString);
+            values.put(BookEntry.COLUMN_BOOK_PRICE, priceString);
+            values.put(BookEntry.COLUMN_BOOK_QTY, qtyString);
+            values.put(BookEntry.COLUMN_SUPPLIER_NAME, supplierNameString);
+            values.put(BookEntry.COLUMN_SUPPLIER_PHONE, supplierPhoneString);
+
+
+            int rowsAffected = getContentResolver().update(mCurrentBookUri, values, null, null);
             if (rowsAffected == 0) {
-                // If no rows were affected, then there was an error with the update.
-                Toast.makeText(this, getString(R.string.editor_update_book_failed),
+                Toast.makeText(this, getString(R.string.update_failed),
                         Toast.LENGTH_SHORT).show();
             } else {
-                // Otherwise, the update was successful and we can display a toast.
-                Toast.makeText(this, getString(R.string.editor_update_book_successful),
+                Toast.makeText(this, getString(R.string.update_successful),
                         Toast.LENGTH_SHORT).show();
+                finish();
             }
         }
-    }
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -168,21 +192,13 @@ public class AddActivity extends AppCompatActivity implements
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
-
             case R.id.action_save:
                 saveBook();
-                finish();
                 return true;
-
-            case R.id.action_delete:
-                showDeleteConfirmationDialog();
-                return true;
-
             case android.R.id.home:
                 if (!mBookHasChanged) {
-                    NavUtils.navigateUpFromSameTask(this);
+                    NavUtils.navigateUpFromSameTask(AddActivity.this);
                     return true;
                 }
                 DialogInterface.OnClickListener discardButtonClickListener =
@@ -195,7 +211,7 @@ public class AddActivity extends AppCompatActivity implements
                 showUnsavedChangesDialog(discardButtonClickListener);
                 return true;
         }
-                return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
