@@ -90,10 +90,27 @@ public class AddActivity extends AppCompatActivity implements
         int price = Integer.parseInt(priceString);
         int qty = Integer.parseInt(qtyString);
 
-        if (mCurrentBookUri == null &&
-                TextUtils.isEmpty(nameString) && TextUtils.isEmpty(priceString) &&
-                TextUtils.isEmpty(qtyString) && TextUtils.isEmpty(supplierNameString) && TextUtils.isEmpty(supplierPhoneString)) {
-            return;
+        if (mCurrentBookUri == null) {
+            if (TextUtils.isEmpty(nameString)) {
+                Toast.makeText(this, getString(R.string.product_name_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(priceString)) {
+                Toast.makeText(this, getString(R.string.price_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(qtyString)) {
+                Toast.makeText(this, getString(R.string.quantity_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(supplierNameString)) {
+                Toast.makeText(this, getString(R.string.supplier_phone_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (TextUtils.isEmpty(supplierPhoneString)) {
+                Toast.makeText(this, getString(R.string.supplier_phone_requires), Toast.LENGTH_SHORT).show();
+                return;
+            }
         }
 
         ContentValues values = new ContentValues();
@@ -183,7 +200,6 @@ public class AddActivity extends AppCompatActivity implements
 
     @Override
     public void onBackPressed() {
-        // If the pet hasn't changed, continue with handling back button press
         if (!mBookHasChanged) {
             super.onBackPressed();
             return;

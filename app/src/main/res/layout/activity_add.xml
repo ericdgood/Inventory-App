@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:maxLength="3"
         android:hint="@string/price"
         android:layout_marginTop="10dp"/>
 
@@ -31,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:maxLength="3"
         android:hint="@string/quantity"
         android:layout_marginTop="10dp"/>
 
@@ -49,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
+        android:maxLength="10"
         android:hint="@string/supplier_phone_number"
         android:layout_marginTop="10dp"/>
 
